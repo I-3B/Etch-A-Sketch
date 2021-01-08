@@ -68,12 +68,12 @@ body{
     position: fixed;
     right: 20px;
     bottom:20px;
+    opacity: 0;
     animation-name:fade ;
     animation-duration: 5s;
 }
 @keyframes fade {
-    0% {opacity: 1;}
-
+    0% {opacity:1 ;}
     100% {opacity: 0;}
  }
 .cell {
