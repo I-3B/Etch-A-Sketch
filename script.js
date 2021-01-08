@@ -4,24 +4,36 @@ function RandomBackgroundColor(){
 }
 
 document.body.style.setProperty('--background-color',RandomBackgroundColor());
+document.addEventListener('mouseover', logKey);
 
-
+var ctrlPressed=false;
+var shiftPressed=false;
 var size=16;
 var cells;
 const clear=document.getElementById('clear');
 const container = document.getElementById('container');
 const grid=document.createElement('div');
 const input=document.getElementById('size-input');
+const message=document.createElement('div');
+
 grid.setAttribute('id','grid');
 container.appendChild(grid);
 
+message.setAttribute('id','message');
+
+message.innerHTML='<p>Drawing: Ctrl + mouse<br>Erasing: Shift + mouse<p>';
+container.appendChild(message);
 input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
       setSize(document.getElementById("size-input").value);
       makeGrid(size);
     }
   });
-
+  function logKey(e) {
+    ctrlPressed=e.ctrlKey;
+    shiftPressed=e.shiftKey;
+    
+  }
 function makeGrid(size) {
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
@@ -34,7 +46,10 @@ function makeGrid(size) {
     };
     cells=document.querySelectorAll('.cell');
     cells.forEach(i=>i.addEventListener('mouseover',()=>{
-    i.setAttribute('style','background-color:black;')
+    if(ctrlPressed)
+        i.setAttribute('style','background-color:black;');
+    else if(shiftPressed)
+        i.setAttribute('style','background-color:default;');
 }));
 };
 
@@ -46,7 +61,7 @@ function setSize(v){
 }
 makeGrid(size);
 clear.addEventListener('click',()=>{
-    makeGrid(size);
+    cells.forEach(i=>i.setAttribute('style','background-color:default;'));
 });
 
 
