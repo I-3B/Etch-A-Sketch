@@ -1,85 +1,75 @@
 :root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-    --background-color:black;
+  --grid-cols: 1;
+  --grid-rows: 1;
+  --background-color: black;
 }
-body{
-    background-color:var(--background-color);
-    transition: 0.6s;
-    font-family: sans-serif;
+body {
+  background-color: var(--background-color);
+  transition: 0.6s;
+  font-family: sans-serif;
 }
-#container{
-    border-radius: 3%;
-    background-color:rgb(77, 43, 156);
-    margin: auto;
-    width: 585px;
-    height: 605px;
+#container {
+  position: relative;
+  border-radius: 3%;
+  background-color: rgb(77, 43, 156);
+  margin: auto;
+  width: 585px;
+  height: 605px;
 }
-#menu{
-    cursor: default;
-    color:var(--background-color);
-    margin: auto;
-    width:535px;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
+#menu {
+  cursor: default;
+  color: var(--background-color);
+  margin: auto;
+  width: 535px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-#menu div:hover{
-    color:white;
-    transition: 0.3s;
-}
-
-#clear{
-    font-size:30px;
-    padding: 10px;
-    margin: auto;
-    cursor: pointer;
+#menu div:hover {
+  color: white;
+  transition: 0.3s;
 }
 
-#grid-size-input{
-    
-    align-items: center;
-    font-size: 30px;
-    margin: auto;
+#clear {
+  font-size: 30px;
+  padding: 10px;
+  margin: auto;
+  cursor: pointer;
 }
-#grid-size-input input{
-    outline: none;
-    width:60px;
-    height: 25px;
-    font-size: 20px;
-    color:var(--background-color);
 
+#grid-size-input {
+  align-items: center;
+  font-size: 30px;
+  margin: auto;
+}
+#grid-size-input input {
+  outline: none;
+  width: 60px;
+  height: 25px;
+  font-size: 20px;
+  color: var(--background-color);
 }
 #grid {
-    width: 535px;
-    height: 535px;
-    margin: auto;
-    display:grid;
-    grid-gap: 0em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-    background-color:blueviolet;
+  width: 535px;
+  height: 535px;
+  margin: auto;
+  display: grid;
+  grid-gap: 0em;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  background-color: blueviolet;
 }
-#message{
-    line-height: 30px;
-    font-family: sans-serif;
-    font-size: 20px;
-    color: #fcfdb0a9;
-    cursor: default;
-    position: fixed;
-    right: 20px;
-    bottom:20px;
-    opacity: 0;
-    animation-name:fade ;
-    animation-duration: 5s;
+#message {
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #ffffff67;
+  cursor: default;
+  position: absolute;
+  right: -300px;
+  bottom: 0px;
+  opacity: 1;
 }
-@keyframes fade {
-    0% {opacity:1 ;}
-    100% {opacity: 0;}
- }
 .cell {
-    transition: 0.5s;
-    background-color:wheat;
+  transition: 0.5s;
+  background-color: wheat;
 }
-
- 
-  
