@@ -70,6 +70,6 @@ body {
   opacity: 1;
 }
 .cell {
-  transition: 0.5s;
+  transition: 0.1s;
   background-color: wheat;
 }
